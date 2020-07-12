@@ -11,8 +11,6 @@ class Tests(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_first(self):
-        self.fail("First test")
 
     # The user enters the CV section of the webpage
     def test_homepage_cv(self):
