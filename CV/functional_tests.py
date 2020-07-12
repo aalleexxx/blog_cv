@@ -14,6 +14,10 @@ class Tests(unittest.TestCase):
     def test_first(self):
         self.fail("First test")
 
+    # The user enters the CV section of the webpage
+    def test_homepage_cv(self):
+        self.browser.get('http://127.0.0.1:8000/')
+        self.assertIn('CV',self.browser.title)
 
 if __name__ == "__main__":
     unittest.main(warnings='ignore')
