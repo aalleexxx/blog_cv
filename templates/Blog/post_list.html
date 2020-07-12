@@ -1,0 +1,18 @@
+{% extends 'Blog/base.html' %}
+<br>
+{% block content %}
+
+<div class="centerstage">
+
+
+    {% for post in post_list %}
+        <div class="post jumbotron">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}" style="color:#212529;">{{ post.title }}</a></h1>
+            <div class="date">
+                <p>Published on: {{ post.published_date|date:"D M Y"}}</p>
+            </div>
+            <a href="{% url 'post_detail' pk=post.pk %}" style="color: #212529;">Comments: {{ post.approve_comments.count }}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
