@@ -28,3 +28,11 @@ class tests(TestCase):
             self.assertIsNotNone(Experience.objects.get(pk=1))
         else:
             self.fail("Didn't create the experience model")
+
+    def test_for_education_model(self):
+        edu = Education.objects.create(certificate_description="Testing the education", certificate_start_date="2020-06-01",certification_end_date="2022-09-01")
+        edu.save()
+        if Education.objects.get(pk=1):
+            self.assertIsNotNone(Education.objects.get(pk=1))
+        else:
+            self.fail("Didn't create the education model")
