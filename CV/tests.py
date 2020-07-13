@@ -16,7 +16,14 @@ class tests(TestCase):
         if About.objects.get(pk=1):
             self.assertIsNotNone(About.objects.get(pk=1))
         else:
-            self.fail("Didn't create the object")
+            self.fail("Didn't create the about model")
 
 
 
+    def test_for_experience_model(self):
+        exp = Experience.objects.create(job_description="Testing the exp",job_start_date="2020-06-01",job_end_date="2020-09-01")
+        exp.save()
+        if Experience.objects.get(pk=1):
+            self.assertIsNotNone(Experience.objects.get(pk=1))
+        else:
+            self.fail("Didn't create the experience model")
