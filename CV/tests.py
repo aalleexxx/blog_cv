@@ -10,3 +10,13 @@ class tests(TestCase):
         response = self.client.get('/CV')
         self.assertTemplateUsed(response, 'CV/base.html')
 
+    def test_for_about_model(self):
+        about = About.object.create(description="THis is a test")
+        about.save()
+        if About.object.get(pk=1):
+
+        else:
+            self.fail("Didn't create the object")
+
+
+
