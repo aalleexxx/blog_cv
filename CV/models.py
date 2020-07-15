@@ -30,3 +30,6 @@ class Education(models.Model):
 
     def __str__(self):
         return self.certificate_title
+
+class Skills(models.Model):
+    skills_text = models.TextField()
