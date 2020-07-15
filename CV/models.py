@@ -37,3 +37,10 @@ class Skills(models.Model):
 
     def __str__(self):
         return self.skills_text
+
+
+class Interests(models.Model):
+    interests_text = models.TextField()
+
+    def __str__(self):
+        return self.interests_text

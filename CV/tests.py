@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.http import HttpRequest
 from django.test import TestCase
-from CV.models import About, Experience, Education, Skills
+from CV.models import About, Experience, Education, Skills, Interests
 # Create your tests here.
 from CV.views import home_page
 
