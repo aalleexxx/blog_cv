@@ -84,7 +84,7 @@ class tests(TestCase):
             self.fail("Didn't create the about model")
 
     def test_for_interests_model(self):
-        interests = Interests.objects.create(skills_text="Django")
+        interests = Interests.objects.create(interests_text="Python")
         interests.save()
         if Interests.objects.get(pk=1):
             print(Interests.objects.get(pk=1))
