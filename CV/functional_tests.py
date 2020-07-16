@@ -51,6 +51,14 @@ class Tests(unittest.TestCase):
         # The user looks for the skills text
         self.assertIsNotNone(self.browser.find_element_by_id("id_skills"))
 
+    def test_interests_page_cv(self):
+        # The user opens the browser and goes to the interests section of the website
+        self.browser.get('http://127.0.0.1:8000/CV/interests')
+        # The user checks the title of the website
+        self.assertIn('CV', self.browser.title)
+        # The user looks for the interests content
+        self.assertIsNotNone(self.browser.find_element_by_id("id_interest"))
+
 
 if __name__ == "__main__":
     unittest.main(warnings='ignore')
