@@ -1,0 +1,6 @@
+{% extends "CV/base.html" %}
+{% block info %}
+    {% for skill in skills_list %}
+        <p id="id_skills">{{ skill.skills_text }}</p>
+    {% endfor %}
+{% endblock %}

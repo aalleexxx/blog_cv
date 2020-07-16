@@ -1,7 +1,7 @@
 # Create your views here.
 from django.shortcuts import render
 from django.views.generic import ListView
-from CV.models import About, Education, Experience
+from CV.models import About, Education, Experience, Skills
 
 
 class AboutView(ListView):
@@ -23,3 +23,10 @@ class ExperienceView(ListView):
 
     def get_queryset(self):
         return Experience.objects.all()
+
+
+class SkillsView(ListView):
+    model = Skills
+
+    def get_queryset(self):
+        return Skills.objects.all()
