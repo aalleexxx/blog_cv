@@ -10,3 +10,8 @@ class AboutView(ListView):
     def get_queryset(self):
         return About.objects.all()
 
+class EducationView(ListView):
+    model = Education
+
+    def get_queryset(self):
+        return Education.objects.all()

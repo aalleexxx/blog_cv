@@ -1,0 +1,10 @@
+{% extends "CV/base.html" %}
+{% block info %}
+    {% for education in education_list %}
+        <p id="id_certificate_title">{{ education.certificate_title }}</p>
+        <p id="id_certificate_description">{{ education.certificate_description }}</p>
+        <p id="id_certificate_institute">{{ education.certificate_institute }}</p>
+        <p id="id_certificate_start_date">{{ education.certificate_start_date }}</p>
+        <p id="id_certificate_end_date">{{ education.certificate_end_date }}</p>
+    {% endfor %}
+{% endblock %}
