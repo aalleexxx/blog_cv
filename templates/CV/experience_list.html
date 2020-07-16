@@ -1,0 +1,10 @@
+{% extends "CV/base.html" %}
+{% block info %}
+    {% for experience in experience_list %}
+        <p id="id_job_title">{{ experience.job_title }}</p>
+        <p id="id_job_company">{{ experience.job_company }}</p>
+        <p id="id_job_description">{{ experience.job_description }}</p>
+        <p id="id_job_start_date">{{ experience.job_start_date }}</p>
+        <p id="id_job_end_date">{{ experience.job_end_date }}</p>
+    {% endfor %}
+{% endblock %}
