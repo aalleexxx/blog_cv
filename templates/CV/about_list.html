@@ -1,0 +1,6 @@
+{% extends "CV/base.html" %}
+{% block info %}
+    {% for about in about_list %}
+        <p id="id_about">{{ about.description }}</p>
+    {% endfor %}
+{% endblock %}
