@@ -43,6 +43,13 @@ class Tests(unittest.TestCase):
         self.assertIsNotNone(self.browser.find_element_by_id("id_job_start_date"))
         self.assertIsNotNone(self.browser.find_element_by_id("id_job_end_date"))
 
+    def test_skills_page_cv(self):
+        # The user opens the browser and goes to the skills section of the website
+        self.browser.get('http://127.0.0.1:8000/CV/skills')
+        # The user checks the title of the website
+        self.assertIn('CV', self.browser.title)
+        # The user looks for the skills text
+        self.assertIsNotNone(self.browser.find_element_by_id("id_skills"))
 
 
 if __name__ == "__main__":
