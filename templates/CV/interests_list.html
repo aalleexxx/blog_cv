@@ -1,0 +1,6 @@
+{% extends "CV/base.html" %}
+{% block info %}
+    {% for interest in interests_list %}
+        <p id="id_interest">{{ interest.interests_text }}</p>
+    {% endfor %}
+{% endblock %}
