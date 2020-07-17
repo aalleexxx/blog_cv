@@ -3,7 +3,6 @@ from django.http import HttpRequest
 from django.test import TestCase
 from CV.models import About, Experience, Education, Skills, Interests
 # Create your tests here.
-from CV.views import home_page
 
 
 class tests(TestCase):

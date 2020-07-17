@@ -59,6 +59,16 @@ class Tests(unittest.TestCase):
         # The user looks for the interests content
         self.assertIsNotNone(self.browser.find_element_by_id("id_interest"))
 
+    def test_style_homepage_cv(self):
+        self.browser.get('http://127.0.0.1:8000/CV')
+        self.browser.set_window_size(1024, 768)
+        about_text = self.browser.find_element_by_id('id_about')
+        self.assertAlmostEqual(
+            about_text.location['x'] + about_text.size['width'] / 2,
+            512,
+            delta=3
+        )
+
 
 if __name__ == "__main__":
     unittest.main(warnings='ignore')
