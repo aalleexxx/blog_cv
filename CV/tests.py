@@ -6,9 +6,17 @@ from CV.models import About, Experience, Education, Skills, Interests
 
 
 class tests(TestCase):
-    def test_cv_uses_correct_template(self):
-        response = self.client.get('/CV')
-        self.assertTemplateUsed(response, 'CV/base.html')
+    def test_cv_uses_correct_templates(self):
+        response = self.client.get('/CV/')
+        self.assertTemplateUsed(response, 'CV/about_list.html')
+        response = self.client.get('/CV/experience')
+        self.assertTemplateUsed(response, 'CV/experience_list.html')
+        response = self.client.get('/CV/education')
+        self.assertTemplateUsed(response, 'CV/education_list.html')
+        response = self.client.get('/CV/interests')
+        self.assertTemplateUsed(response, 'CV/interests_list.html')
+        response = self.client.get('/CV/skills')
+        self.assertTemplateUsed(response, 'CV/skills_list.html')
 
     def test_for_about_model(self):
         about = About.objects.create(description="THis is a test")
