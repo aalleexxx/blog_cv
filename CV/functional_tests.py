@@ -3,7 +3,7 @@ import unittest
 from selenium import webdriver
 
 
-class Tests(unittest.TestCase):
+class UserTests(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Chrome()
@@ -75,7 +75,7 @@ class Tests(unittest.TestCase):
         experience_title = self.browser.find_element_by_id('id_job_title')
         self.assertAlmostEqual(
             experience_title.location['x'] + experience_title.size['width'] / 2,
-            630,
+            580,
             delta=5
         )
 
@@ -85,8 +85,8 @@ class Tests(unittest.TestCase):
         education_title = self.browser.find_element_by_id('id_certificate_title')
         self.assertAlmostEqual(
             education_title.location['x'] + education_title.size['width'] / 2,
-            630,
-            delta=5
+            580,
+            delta=10
         )
 
     def test_style_skills_page_cv(self):
@@ -95,8 +95,8 @@ class Tests(unittest.TestCase):
         skills = self.browser.find_element_by_id('id_skills')
         self.assertAlmostEqual(
             skills.location['x'] + skills.size['width'] / 2,
-            630,
-            delta=5
+            360,
+            delta=10
         )
 
     def test_style_interests_page_cv(self):

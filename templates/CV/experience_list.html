@@ -1,10 +1,54 @@
-{% extends "CV/base.html" %}
+{% extends 'CV/base.html' %}
 {% block info %}
-    {% for experience in experience_list %}
-        <p id="id_job_title">{{ experience.job_title }}</p>
-        <p id="id_job_company">{{ experience.job_company }}</p>
-        <p id="id_job_description">{{ experience.job_description }}</p>
-        <p id="id_job_start_date">{{ experience.job_start_date }}</p>
-        <p id="id_job_end_date">{{ experience.job_end_date }}</p>
-    {% endfor %}
+    {% if user.is_authenticated %}
+        <section class="resume-section jumbotron" id="experience" style="background-color: white">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Experience</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <a href="{% url 'experience_create' %}" id="id_create" style="color:#212529;"><svg class="bi bi-pen" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
+                                                                            <path fill-rule="evenodd" d="M9.854 2.56a.5.5 0 0 0-.708 0L5.854 5.855a.5.5 0 0 1-.708-.708L8.44 1.854a1.5 1.5 0 0 1 2.122 0l.293.292a.5.5 0 0 1-.707.708l-.293-.293z"/>
+                                                                            <path d="M13.293 1.207a1 1 0 0 1 1.414 0l.03.03a1 1 0 0 1 .03 1.383L13.5 4 12 2.5l1.293-1.293z"/>
+                                                                            </svg></a>
+                    {% for experience in experience_list %}
+                    <div class="flex-grow-1">
+                        <a href="{% url 'experience_edit' pk=experience.pk %}" id="id_edit{{experience.pk}}" style="color:#212529;"><svg class="bi bi-pen" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
+                                                                            <path fill-rule="evenodd" d="M9.854 2.56a.5.5 0 0 0-.708 0L5.854 5.855a.5.5 0 0 1-.708-.708L8.44 1.854a1.5 1.5 0 0 1 2.122 0l.293.292a.5.5 0 0 1-.707.708l-.293-.293z"/>
+                                                                            <path d="M13.293 1.207a1 1 0 0 1 1.414 0l.03.03a1 1 0 0 1 .03 1.383L13.5 4 12 2.5l1.293-1.293z"/>
+                                                                            </svg></a>
+
+                        <a href="{% url 'experience_delete' pk=experience.pk %}" id="id_delete{{experience.pk}}" style="color:#212529;"><svg class="bi bi-pen" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
+                                                                            <path fill-rule="evenodd" d="M9.854 2.56a.5.5 0 0 0-.708 0L5.854 5.855a.5.5 0 0 1-.708-.708L8.44 1.854a1.5 1.5 0 0 1 2.122 0l.293.292a.5.5 0 0 1-.707.708l-.293-.293z"/>
+                                                                            <path d="M13.293 1.207a1 1 0 0 1 1.414 0l.03.03a1 1 0 0 1 .03 1.383L13.5 4 12 2.5l1.293-1.293z"/>
+                                                                            </svg></a>
+                        <h3 class="mb-0" id="id_job_title{{experience.pk}}">{{ experience.job_title }}</h3>
+                        <div class="subheading mb-3" id="id_job_company">{{ experience.job_company }}</div>
+                        <p id="id_job_description">{{ experience.job_description }}</p>
+
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary" id="id_job_start_date">{{ experience.job_start_date }}</span> - <span class="text-primary" id="id_job_end_date"> {{ experience.job_end_date }}</span></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% else %}
+
+        <section class="resume-section jumbotron" id="experience" style="background-color: white">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Experience</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    {% for experience in experience_list %}
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0"><p id="id_job_title">{{ experience.job_title }}</p></h3>
+                        <div class="subheading mb-3"><p id="id_job_company">{{ experience.job_company }}</p></div>
+                        <p id="id_job_description">{{ experience.job_description }}</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary"><p id="id_job_start_date">{{ experience.job_start_date}}</p> - <p id="id_job_end_date">{{ experience.job_end_date }}</p></span></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
 {% endblock %}
