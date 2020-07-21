@@ -14,7 +14,7 @@
     {% csrf_token %}
         {{form.as_p}}
 
-        <input type="submit" class='btn btn-dark' value="Login" />
+        <input type="submit" class='btn btn-dark' value="Login" id="id_login" />
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
   </div>
