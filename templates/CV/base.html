@@ -35,15 +35,21 @@
                                                                                                       </svg></a> </li>
                     {% endif %}
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'CV' %}">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'Experience' %}">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'Education' %}">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'Skills' %}">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'Interests' %}">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'experience' %}">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'education' %}">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'skills' %}">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'interests' %}">Interests</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" id="back" href="{% url 'post_list' %}">Back</a></li>
                 </ul>
             </div>
         </nav>
-{% block info %}
-{% endblock %}
+         <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block info %}
+                    {% endblock %}
+                </div>
+            </div>
+         </div>
 </body>
 </html>

@@ -1,0 +1,12 @@
+{% extends 'CV/base.html' %}
+{% load crispy_forms_tags %}
+{% block info %}
+    <h1>Update Experience</h1>
+    <div class="jumbotron" style="background-color: white">
+    <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="save btn btn-primary" id="id_save">Save</button>
+    </form>
+    </div>
+{% endblock %}

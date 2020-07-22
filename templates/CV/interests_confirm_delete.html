@@ -1,0 +1,12 @@
+{% extends 'CV/base.html' %}
+{% block info %}
+    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4 mt-5">
+    <div class="jumbotron jumbotron-fluid" style="background-color: white">
+    <form action="" method="post">{% csrf_token %}
+        <p>Are you sure you want to delete the entry for "{{ interests.interests_text }}"?</p>
+        <input class='btn btn-danger' type="submit" value="Confirm" id="id_confirm" />
+        <a class="nav-link" href="{% url 'interests' %} id="id_confirm>Cancel</a>
+    </form>
+    </div>
+    </div>
+{% endblock %}
