@@ -30,7 +30,7 @@
   </button>
      {% else %}
      <li class="nav-item">
-        <a class="customized_text" style="color: white;"> Welcome: {{ user.username }}</a>
+         <a class="customized_text" style="color: white;"> Welcome: <a href="{% url 'admin:index' %}" class="customized_text" style="color: white; text-decoration: none;" onMouseOver="this.style.color='rgba(255,255,255,.5)'"onMouseOut="this.style.color='#fff'">{{ user.username }}</a></a>
      </li>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,28 +39,28 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'post_list' %}">Blog <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'CV' %}" >CV</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/aalleexxx" >GitHub</a>
-      </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'post_list' %}">Blog <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item">
-        <a class="nav-link" href="https://www.linkedin.com/in/alex-onofras" >LinkedIn</a>
-      </li>
+            <a class="nav-link" href="{% url 'CV' %}" >CV</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/aalleexxx" >GitHub</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/alex-onofras" >LinkedIn</a>
+        </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
-      </li>
+                <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
+            </li>
             <li class="nav-item">
-        <a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
-      </li>
+                <a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
+            </li>
             <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-      </li>
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
         {% endif %}
     </ul>
   </div>
