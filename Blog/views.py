@@ -70,7 +70,6 @@ def post_publish(request, pk):
     return redirect('post_detail', pk=pk)
 
 def add_comment_to_post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -80,7 +79,7 @@ def add_comment_to_post(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = CommentForm()
-    return render(request, 'Blog/comment_form.html', {'form': form})
+        return render(request, 'Blog/comment_form.html', {'form': form})
 
 
 @login_required
