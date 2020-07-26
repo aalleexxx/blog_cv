@@ -189,7 +189,7 @@ class InterestsView(ListView):
 
 class InterestsDeleteView(LoginRequiredMixin, DeleteView):
     model = Interests
-
+    success_url = reverse_lazy('interests')
 
 class InterestsUpdateView(LoginRequiredMixin, UpdateView, FormMixin):
     login_url = '/login/'
