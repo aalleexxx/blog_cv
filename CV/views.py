@@ -33,7 +33,7 @@ class EducationView(ListView):
     model = Education
 
     def get_queryset(self):
-        return Education.objects.all()
+        return Education.objects.order_by('-certificate_end_date')
 
 
 class EducationUpdateView(LoginRequiredMixin, UpdateView, FormMixin):
@@ -88,7 +88,7 @@ class ExperienceView(ListView):
     model = Experience
 
     def get_queryset(self):
-        return Experience.objects.all()
+        return Experience.objects.order_by('-job_end_date')
 
 
 class ExperienceDeleteView(LoginRequiredMixin, DeleteView):

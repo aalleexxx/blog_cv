@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import mimetypes
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'zfzh)trq81bd2@+@5$h#cfj(8*_5)=fjvr4kbp1v@_8-31r21='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+mimetypes.add_type("image/svg+xml", ".svg", True)
 
 ALLOWED_HOSTS = ['aalleexx.pythonanywhere.com', '127.0.0.1', ]
 

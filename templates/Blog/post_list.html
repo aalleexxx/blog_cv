@@ -5,7 +5,7 @@
 <div class="centerstage">
     {% for post in post_list %}
         <div class="post jumbotron">
-            <h1><a href="{% url 'post_detail' pk=post.pk %}" style="color:#212529;">{{ post.title }}</a></h1>
+            <h3><a href="{% url 'post_detail' pk=post.pk %}" style="color:#212529;">{{ post.title }}</a></h3>
             <div class="date">
                 <p>Published on: {{ post.published_date|date:"D M Y"}}</p>
             </div>

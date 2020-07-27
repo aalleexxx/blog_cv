@@ -30,9 +30,9 @@
                                 </a>
                                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0" id="id_certificate_title{{ education.pk }}">{{ education.certificate_title }}</h3>
-                            <div class="subheading mb-3" id="id_certificate_institute{{ education.pk }}">{{ education.certificate_institute }}</div>
-                            <p id="id_certificate_description{{ education.pk }}">{{ education.certificate_description }}</p>
+                            <h3 class="mb-0" id="id_certificate_title{{ education.pk }}">{{ education.certificate_title|safe }}</h3>
+                            <div class="subheading mb-3" id="id_certificate_institute{{ education.pk }}">{{ education.certificate_institute|safe }}</div>
+                            <p id="id_certificate_description{{ education.pk }}"><pre>{{ education.certificate_description|safe }}</pre></p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary"><p id="id_certificate_start_date{{ education.pk }}">{{ education.certificate_start_date }}</p> - <p id="id_certificate_end_date{{ education.pk }}">{{ education.certificate_end_date }}</p></span></div>
                         </div>
